@@ -1,5 +1,5 @@
 import { useLocale } from "@/contexts/LocaleContext";
-import { renderWithCode } from "@/components/InlineCode";
+import { renderWithCode } from "@/components/public/InlineCode";
 import { ArrowBackRounded } from "@mui/icons-material";
 import { Container, IconButton, Typography } from "@mui/material";
 import { Link } from "wouter";

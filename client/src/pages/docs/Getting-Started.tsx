@@ -1,5 +1,5 @@
 import { useLocale } from "@/contexts/LocaleContext";
-import { renderWithCode } from "@/components/InlineCode";
+import { renderWithCode } from "@/components/public/InlineCode";
 import { ArrowBackRounded, CheckCircleOutline } from "@mui/icons-material";
 import { Button, Container, IconButton, Typography } from "@mui/material";
 import { Link } from "wouter";
@@ -222,14 +222,6 @@ volumes:
                                 {renderWithCode(t.gettingStarted.cookiesQuickStart.tip)}
                             </Typography>
                         </div>
-                        <Link href="/docs/cookies-setup">
-                            <Button
-                                variant="outlined"
-                                className="w-fit rounded-lg border-secondary font-sans capitalize text-secondary"
-                            >
-                                {t.nav.cookiesSetup}
-                            </Button>
-                        </Link>
                     </div>
 
                     <div className="flex flex-col gap-3">
@@ -243,22 +235,6 @@ volumes:
                                     className="rounded-lg border-third font-sans capitalize text-third"
                                 >
                                     {t.nav.configuration}
-                                </Button>
-                            </Link>
-                            <Link href="/docs/cookies-setup">
-                                <Button
-                                    variant="outlined"
-                                    className="rounded-lg border-third font-sans capitalize text-third"
-                                >
-                                    {t.nav.cookiesSetup}
-                                </Button>
-                            </Link>
-                            <Link href="/docs/disclaimers">
-                                <Button
-                                    variant="outlined"
-                                    className="rounded-lg border-third font-sans capitalize text-third"
-                                >
-                                    {t.nav.disclaimers}
                                 </Button>
                             </Link>
                         </div>

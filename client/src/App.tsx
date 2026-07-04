@@ -1,13 +1,11 @@
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
-import { NavigationBar } from "@/components/NavigationBar";
+import { NavigationBar } from "@/components/public/NavigationBar";
 import { LocaleProvider } from "@/contexts/LocaleContext";
 import HomePage from "@/pages/public/Home";
 import PermissionCalculatorPage from "@/pages/public/Permission-Calculator";
-import GettingStartedPage from "@/pages/docs/getting-started";
-import ConfigurationPage from "@/pages/docs/configuration";
-import CookiesSetupPage from "@/pages/docs/cookies-setup";
-import DisclaimersPage from "@/pages/docs/disclaimers";
+import GettingStartedPage from "@/pages/docs/Getting-Started";
+import ConfigurationPage from "@/pages/docs/Configuration";
 import NotFound from "@/pages/public/Not-Found";
 import "@/styles/index.scss";
 
@@ -32,8 +30,6 @@ function Router() {
                 component={GettingStartedPage}
             />
             <Route path="/docs/configuration" component={ConfigurationPage} />
-            <Route path="/docs/cookies-setup" component={CookiesSetupPage} />
-            <Route path="/docs/disclaimers" component={DisclaimersPage} />
             <Route component={NotFound} />
         </Switch>
     );
