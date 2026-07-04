@@ -1,2 +1,3 @@
 - [Next.js-to-Vite migration tsconfig pitfall](nextjs-to-vite-tsconfig.md) — fullstack_copy_frontend.sh can generate a tsconfig.json extending/referencing nonexistent monorepo files, causing silent dev-server 500s.
 - [Deregistering an artifact to plain root+client/ layout](deregister-artifact-layout.md) — moving out of artifacts/ convention requires manual workflow re-creation, vite/tsconfig/tailwind path updates, and clearing node_modules/.vite cache.
+- [Vite root at project root causes ENOSPC](vite-root-enospc.md) — setting Vite's `root` to the whole project (not a subfolder) can crash the dev server watching node_modules/.git/pnpm-store; exclude via server.watch.ignored.
