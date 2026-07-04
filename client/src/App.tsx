@@ -2,13 +2,13 @@ import { Switch, Route, Router as WouterRouter } from "wouter";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import { NavigationBar } from "@/components/NavigationBar";
 import { LocaleProvider } from "@/contexts/LocaleContext";
-import HomePage from "@/pages/index";
-import PermissionCalculatorPage from "@/pages/permission-calculator";
+import HomePage from "@/pages/public/Home";
+import PermissionCalculatorPage from "@/pages/public/Permission-Calculator";
 import GettingStartedPage from "@/pages/docs/getting-started";
 import ConfigurationPage from "@/pages/docs/configuration";
 import CookiesSetupPage from "@/pages/docs/cookies-setup";
 import DisclaimersPage from "@/pages/docs/disclaimers";
-import NotFound from "@/pages/not-found";
+import NotFound from "@/pages/public/Not-Found";
 import "@/styles/index.scss";
 
 const theme = createTheme({

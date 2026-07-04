@@ -45,7 +45,7 @@ export default defineConfig({
     },
     dedupe: ["react", "react-dom"],
   },
-  root: path.resolve(import.meta.dirname, "client"),
+  root: path.resolve(import.meta.dirname),
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
@@ -57,6 +57,16 @@ export default defineConfig({
     allowedHosts: true,
     fs: {
       strict: true,
+    },
+    watch: {
+      ignored: [
+        "**/node_modules/**",
+        "**/.git/**",
+        "**/.cache/**",
+        "**/.local/**",
+        "**/.migration-backup/**",
+        "**/dist/**",
+      ],
     },
   },
   preview: {
