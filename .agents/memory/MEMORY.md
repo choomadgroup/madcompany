@@ -1,0 +1,1 @@
+- [Next.js-to-Vite migration tsconfig pitfall](nextjs-to-vite-tsconfig.md) — fullstack_copy_frontend.sh can generate a tsconfig.json extending/referencing nonexistent monorepo files, causing silent dev-server 500s.
