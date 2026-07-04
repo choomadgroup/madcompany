@@ -1,0 +1,76 @@
+{
+    "name": "rawon",
+    "version": "1.0.0",
+    "description": "A simple powerful Discord music (multi-)bot built to fulfill your production desires. Easy to use, with no coding required.",
+    "homepage": "https://github.com/stegripe/rawon#readme",
+    "bugs": {
+        "url": "https://github.com/stegripe/rawon/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/stegripe/rawon.git"
+    },
+    "license": "CC-BY-NC-ND-4.0",
+    "author": "noxzym",
+    "scripts": {
+        "build": "next build",
+        "dev": "next dev",
+        "lint": "next lint",
+        "start": "next start"
+    },
+    "prettier": {
+        "arrowParens": "avoid",
+        "tabWidth": 4,
+        "trailingComma": "none"
+    },
+    "eslintConfig": {
+        "parserOptions": {
+            "project": "tsconfig.json"
+        },
+        "plugins": [
+            "prettier"
+        ],
+        "extends": [
+            "next",
+            "next/core-web-vitals",
+            "prettier"
+        ]
+    },
+    "dependencies": {
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.0",
+        "@mui/icons-material": "^5.16.7",
+        "@mui/material": "^5.16.7",
+        "framer-motion": "^11.15.0",
+        "next": "^14.2.21",
+        "next-pwa": "^5.6.0",
+        "next-seo": "^6.6.0",
+        "react": "^18.3.1",
+        "react-code-blocks": "^0.1.6",
+        "react-dom": "^18.3.1",
+        "react-icons": "^5.4.0",
+        "sass": "^1.83.0",
+        "swr": "^2.3.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.10.2",
+        "@types/react": "^18.3.17",
+        "@types/react-dom": "^18.3.5",
+        "@typescript-eslint/eslint-plugin": "^8.18.2",
+        "@typescript-eslint/parser": "^8.18.2",
+        "autoprefixer": "^10.4.20",
+        "eslint": "^8.57.1",
+        "eslint-config-next": "^14.2.21",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.2.1",
+        "postcss": "^8.4.49",
+        "prettier": "^3.4.2",
+        "prettier-plugin-tailwindcss": "^0.6.9",
+        "tailwindcss": "^3.4.17",
+        "typescript": "^5.7.2"
+    },
+    "engines": {
+        "node": ">=18.17.0",
+        "pnpm": ">=9.0.0"
+    }
+}
