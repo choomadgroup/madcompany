@@ -1,1 +1,2 @@
 - [Next.js-to-Vite migration tsconfig pitfall](nextjs-to-vite-tsconfig.md) — fullstack_copy_frontend.sh can generate a tsconfig.json extending/referencing nonexistent monorepo files, causing silent dev-server 500s.
+- [Deregistering an artifact to plain root+client/ layout](deregister-artifact-layout.md) — moving out of artifacts/ convention requires manual workflow re-creation, vite/tsconfig/tailwind path updates, and clearing node_modules/.vite cache.

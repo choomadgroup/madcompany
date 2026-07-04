@@ -6,9 +6,9 @@ module.exports = {
     },
     important: "#root",
     content: [
-        "./src/pages/**/*.{js,ts,jsx,tsx}",
-        "./src/components/**/*.{js,ts,jsx,tsx}",
-        "./src/App.tsx"
+        "./client/src/pages/**/*.{js,ts,jsx,tsx}",
+        "./client/src/components/**/*.{js,ts,jsx,tsx}",
+        "./client/src/App.tsx"
     ],
     theme: {
         extend: {

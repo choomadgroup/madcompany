@@ -1,5 +1,5 @@
 {
-  "include": ["src/**/*"],
+  "include": ["client/src/**/*"],
   "exclude": ["node_modules", "build", "dist", "**/*.test.ts"],
   "compilerOptions": {
     "target": "ES2022",
@@ -20,7 +20,7 @@
     "strict": true,
     "types": ["node", "vite/client"],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./client/src/*"]
     }
   }
 }
