@@ -120,6 +120,16 @@ router.get("/portfolios", async (_req, res) => {
     }
 });
 
+router.get("/portfolios/:id", async (req, res) => {
+    try {
+        const portfolio = await Portfolio.findOne({ _id: req.params.id, published: true });
+        if (!portfolio) { res.status(404).json({ error: "Portofolio tidak ditemukan" }); return; }
+        res.json(portfolio);
+    } catch {
+        res.status(500).json({ error: "Gagal mengambil data portofolio" });
+    }
+});
+
 // ─── Admin: Portfolio ──────────────────────────────────────────
 router.get("/admin/portfolios", adminAuth, async (_req, res) => {
     try {

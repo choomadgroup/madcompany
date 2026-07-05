@@ -10,6 +10,7 @@ import ContactPage from "@/pages/public/Contact";
 import BlogPage from "@/pages/explore/Blog";
 import BlogDetail from "@/pages/explore/BlogDetail";
 import PortfolioPage from "@/pages/explore/Portfolio";
+import PortfolioDetail from "@/pages/explore/PortfolioDetail";
 import AdminLogin from "@/pages/admin/Login";
 import AdminDashboard from "@/pages/admin/Dashboard";
 import NotFound from "@/pages/public/Not-Found";
@@ -36,6 +37,7 @@ function AppLayout() {
                 <Route path="/explore/blog" component={BlogPage} />
                 <Route path="/explore/blog/:id" component={BlogDetail} />
                 <Route path="/explore/portfolio" component={PortfolioPage} />
+                <Route path="/explore/portfolio/:id" component={PortfolioDetail} />
                 <Route path="/admin/login" component={AdminLogin} />
                 <Route path="/admin" component={AdminDashboard} />
                 <Route component={NotFound} />

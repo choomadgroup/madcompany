@@ -1,6 +1,7 @@
 import { Container, Typography, CircularProgress } from "@mui/material";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 
 const categories = ["Semua", "Brand", "Fashion", "Food", "Web"];
 
@@ -31,6 +32,7 @@ export default function PortfolioPage() {
     const [active, setActive] = useState("Semua");
     const [portfolios, setPortfolios] = useState<Portfolio[]>([]);
     const [loading, setLoading] = useState(true);
+    const [, setLocation] = useLocation();
 
     useEffect(() => {
         fetch("/api/portfolios")
@@ -94,7 +96,8 @@ export default function PortfolioPage() {
                                 initial={{ opacity: 0, y: 16 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.4, delay: i * 0.07 }}
-                                className="flex flex-col overflow-hidden rounded-2xl border border-third/15 bg-white/50 shadow-sm transition-shadow hover:shadow-md"
+                                onClick={() => setLocation(`/explore/portfolio/${project._id}`)}
+                                className="flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-third/15 bg-white/50 shadow-sm transition-shadow hover:shadow-md"
                             >
                                 {project.imageUrl ? (
                                     <img
