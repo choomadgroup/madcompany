@@ -27,7 +27,7 @@ export const NavigationBar = () => {
 
     const NavigationItems = [
         { name: t.nav.home, path: "/" },
-        { name: t.nav.permissionCalculator, path: "/permission-calculator" },
+        { name: t.nav.permissionCalculator, path: "/about" },
         { name: t.nav.links, path: "/contact" }
     ];
 
