@@ -1,5 +1,4 @@
 import { useLocale } from "@/contexts/LocaleContext";
-import { Locale } from "@/lib/i18n/locales";
 import {
     ExpandLessRounded,
     ExpandMoreRounded,
@@ -44,9 +43,6 @@ export const NavigationBar = () => {
     const [docsAnchorEl, setDocsAnchorEl] = useState<HTMLButtonElement | null>(
         null
     );
-    const [langAnchorEl, setLangAnchorEl] = useState<HTMLButtonElement | null>(
-        null
-    );
 
     const NavigationItems = [
         {
@@ -72,7 +68,8 @@ export const NavigationBar = () => {
 
     const open = Boolean(anchorEl);
     const docsOpen = Boolean(docsAnchorEl);
-    const langOpen = Boolean(langAnchorEl);
+
+    const toggleLocale = () => setLocale(locale === "id" ? "en" : "id");
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
@@ -88,14 +85,6 @@ export const NavigationBar = () => {
 
     const handleDocsClose = () => {
         setDocsAnchorEl(null);
-    };
-
-    const handleLangClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        setLangAnchorEl(event.currentTarget);
-    };
-
-    const handleLangClose = () => {
-        setLangAnchorEl(null);
     };
 
     const ToggleDrawer = () => {
@@ -251,58 +240,15 @@ export const NavigationBar = () => {
                             </div>
                         </Popover>
                     </div>
-                    <div className="flex flex-col gap-1">
-                        <IconButton
-                            id="language"
-                            onClick={handleLangClick}
-                            color="inherit"
-                            className="p-1"
-                        >
-                            <LanguageRounded className="text-2xl text-third" />
-                        </IconButton>
-                        <Popover
-                            id="langPopover"
-                            open={langOpen}
-                            anchorEl={langAnchorEl}
-                            onClose={handleLangClose}
-                            anchorOrigin={{
-                                vertical: "bottom",
-                                horizontal: "center"
-                            }}
-                            transformOrigin={{
-                                vertical: "top",
-                                horizontal: "center"
-                            }}
-                            sx={{
-                                "& .MuiPopover-paper": {
-                                    backgroundColor: "#FFF3D1"
-                                }
-                            }}
-                        >
-                            <div className="flex flex-col p-2">
-                                {(Object.keys(localeNames) as Locale[]).map(
-                                    key => (
-                                        <Button
-                                            key={key}
-                                            id={key}
-                                            onClick={() => {
-                                                setLocale(key);
-                                                handleLangClose();
-                                            }}
-                                            color="inherit"
-                                            className={`w-full justify-start p-0 px-4 py-1 font-sans capitalize text-third ${
-                                                locale === key
-                                                    ? "font-bold"
-                                                    : ""
-                                            }`}
-                                        >
-                                            {localeNames[key]}
-                                        </Button>
-                                    )
-                                )}
-                            </div>
-                        </Popover>
-                    </div>
+                    <IconButton
+                        id="language"
+                        onClick={toggleLocale}
+                        color="inherit"
+                        className="p-1"
+                        title={localeNames[locale]}
+                    >
+                        <LanguageRounded className="text-2xl text-third" />
+                    </IconButton>
                 </div>
             </Container>
             <Drawer
@@ -434,27 +380,18 @@ export const NavigationBar = () => {
                     </div>
                     <Divider className="m-4 w-full" />
                     <div className="flex w-full flex-col gap-1 px-8">
-                        <div className="flex items-center gap-2">
-                            <LanguageRounded className="text-xl text-third" />
-                            <Typography className="font-sans text-lg font-medium">
-                                {t.common.language}
-                            </Typography>
-                        </div>
-                        <div className="flex flex-col gap-1 pl-2">
-                            {(Object.keys(localeNames) as Locale[]).map(key => (
-                                <Button
-                                    key={key}
-                                    id={`drawer-${key}`}
-                                    onClick={() => setLocale(key)}
-                                    color="inherit"
-                                    className={`w-full justify-start p-0 px-4 py-1 font-sans capitalize text-third ${
-                                        locale === key ? "font-bold" : ""
-                                    }`}
-                                >
-                                    {localeNames[key]}
-                                </Button>
-                            ))}
-                        </div>
+                        <Button
+                            id="drawer-language"
+                            color="inherit"
+                            startIcon={<LanguageRounded className="text-xl text-third" />}
+                            onClick={() => {
+                                toggleLocale();
+                                ToggleDrawer();
+                            }}
+                            className="w-full justify-start p-0 px-4 py-1 font-sans text-lg capitalize text-third"
+                        >
+                            {localeNames[locale]}
+                        </Button>
                     </div>
                 </Container>
             </Drawer>
