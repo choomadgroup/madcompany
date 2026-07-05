@@ -13,7 +13,7 @@ export const ja: Translations = {
     },
 
     home: {
-        title: "Rawon",
+        title: "Choomad Group",
         description:
             "本番環境にも使える、シンプルで高機能なDiscord向け音楽（マルチ）ボットです。コード不要で簡単に使えます。",
         invite: "招待する",
@@ -25,7 +25,7 @@ export const ja: Translations = {
     gettingStarted: {
         title: "はじめに",
         subtitle:
-            "手順どおり進めれば、数分でRawonを起動できます。",
+            "手順どおり進めれば、数分でChoomad Groupを起動できます。",
         features: {
             title: "✨ 主な機能",
             items: [
@@ -238,7 +238,7 @@ export const ja: Translations = {
         why: {
             title: "なぜ必要？",
             description:
-                "OVHcloud・AWS・GCP・Azureなど、クラウドやVPSで Rawon を動かしていると、次のような表示が出ることがあります：",
+                "OVHcloud・AWS・GCP・Azureなど、クラウドやVPSで Choomad Group を動かしていると、次のような表示が出ることがあります：",
             error: "Sign in to confirm you're not a bot",
             explanation:
                 "データセンターIPからのリクエストがブロックされることがあります。**Google アカウントで認証**すると有効なクッキーを取得し、その制限を回避できます。"

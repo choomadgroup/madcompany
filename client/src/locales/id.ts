@@ -13,7 +13,7 @@ export const id: Translations = {
     },
 
     home: {
-        title: "Rawon",
+        title: "Choomad Group",
         description:
             "Bot musik Discord (multi-) yang simpel tapi powerful, dibuat untuk kebutuhan produksi. Mudah dipakai, tanpa perlu coding.",
         invite: "Undang",
@@ -25,7 +25,7 @@ export const id: Translations = {
     gettingStarted: {
         title: "Memulai",
         subtitle:
-            "Jalankan Rawon dalam hitungan menit dengan panduan langkah demi langkah.",
+            "Jalankan Choomad Group dalam hitungan menit dengan panduan langkah demi langkah.",
         features: {
             title: "✨ Fitur",
             items: [
@@ -101,7 +101,7 @@ export const id: Translations = {
 
     configuration: {
         title: "Konfigurasi",
-        subtitle: "Cara file konfigurasi dan variabel lingkungan Rawon saling melengkapi.",
+        subtitle: "Cara file konfigurasi dan variabel lingkungan Choomad Group saling melengkapi.",
         overview: {
             title: "📄 File konfigurasi",
             intro: "Pengaturan dibagi ke beberapa file dengan tujuan jelas:",
@@ -235,10 +235,10 @@ export const id: Translations = {
         why: {
             title: "Mengapa saya butuh ini?",
             description:
-                "Jika kamu hosting Rawon di OVHcloud, AWS, GCP, Azure, atau host cloud/VPS lain, kamu bisa melihat:",
+                "Jika kamu hosting Choomad Group di OVHcloud, AWS, GCP, Azure, atau host cloud/VPS lain, kamu bisa melihat:",
             error: "Sign in to confirm you're not a bot",
             explanation:
-                "Platform sering memblokir request dari IP data center. Dengan autentikasi **akun Google**, Rawon bisa mendapat cookie valid dan melewati pembatasan itu."
+                "Platform sering memblokir request dari IP data center. Dengan autentikasi **akun Google**, Choomad Group bisa mendapat cookie valid dan melewati pembatasan itu."
         },
         loginMethod: {
             title: "Disarankan: command `!login`",

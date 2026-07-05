@@ -13,7 +13,7 @@ export const uk: Translations = {
     },
 
     home: {
-        title: "Rawon",
+        title: "Choomad Group",
         description:
             "Простий і потужний музичний (мульти-)бот для Discord, створений для продакшену. Зручний у використанні й не потребує програмування.",
         invite: "Запросити",
@@ -25,7 +25,7 @@ export const uk: Translations = {
     gettingStarted: {
         title: "Початок роботи",
         subtitle:
-            "Запустіть Rawon за кілька хвилин за покроковою інструкцією.",
+            "Запустіть Choomad Group за кілька хвилин за покроковою інструкцією.",
         features: {
             title: "✨ Можливості",
             items: [
@@ -102,7 +102,7 @@ export const uk: Translations = {
     configuration: {
         title: "Налаштування",
         subtitle:
-            "Як файли конфігурації Rawon і змінні середовища працюють разом.",
+            "Як файли конфігурації Choomad Group і змінні середовища працюють разом.",
         overview: {
             title: "📄 Файли конфігурації",
             intro: "Параметри навмисно рознесені кількома файлами:",
@@ -242,10 +242,10 @@ export const uk: Translations = {
         why: {
             title: "Навіщо це потрібно?",
             description:
-                "Якщо Rawon розміщено у OVHcloud, AWS, GCP, Azure або на іншому хмарному/VPS-хостингу, може з’явитися:",
+                "Якщо Choomad Group розміщено у OVHcloud, AWS, GCP, Azure або на іншому хмарному/VPS-хостингу, може з’явитися:",
             error: "Sign in to confirm you're not a bot",
             explanation:
-                "Платформа часто блокує запити з IP дата-центрів. Вхід з **облікового запису Google** дозволяє Rawon отримати дійсні cookie й обійти обмеження."
+                "Платформа часто блокує запити з IP дата-центрів. Вхід з **облікового запису Google** дозволяє Choomad Group отримати дійсні cookie й обійти обмеження."
         },
         loginMethod: {
             title: "Рекомендовано: команда `!login`",

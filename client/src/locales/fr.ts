@@ -13,7 +13,7 @@ export const fr: Translations = {
     },
 
     home: {
-        title: "Rawon",
+        title: "Choomad Group",
         description:
             "Un bot musical Discord simple et puissant, pensé pour vos besoins en production. Facile à utiliser, sans aucune ligne de code.",
         invite: "Inviter",
@@ -25,7 +25,7 @@ export const fr: Translations = {
     gettingStarted: {
         title: "Pour commencer",
         subtitle:
-            "Mettez Rawon en route en quelques minutes grâce à ce guide pas à pas.",
+            "Mettez Choomad Group en route en quelques minutes grâce à ce guide pas à pas.",
         features: {
             title: "✨ Fonctionnalités",
             items: [
@@ -102,7 +102,7 @@ export const fr: Translations = {
     configuration: {
         title: "Configuration",
         subtitle:
-            "Comment les fichiers de configuration et les variables d’environnement de Rawon s’articulent.",
+            "Comment les fichiers de configuration et les variables d’environnement de Choomad Group s’articulent.",
         overview: {
             title: "📄 Fichiers de configuration",
             intro: "Les réglages sont répartis volontairement entre plusieurs fichiers :",
@@ -241,10 +241,10 @@ export const fr: Translations = {
         why: {
             title: "Pourquoi c’est nécessaire ?",
             description:
-                "Si vous hébergez Rawon chez OVHcloud, AWS, GCP, Azure ou un autre cloud/VPS, vous pouvez voir :",
+                "Si vous hébergez Choomad Group chez OVHcloud, AWS, GCP, Azure ou un autre cloud/VPS, vous pouvez voir :",
             error: "Sign in to confirm you're not a bot",
             explanation:
-                "Les plateformes bloquent souvent les IP de datacenters. S’authentifier avec un **compte Google** permet à Rawon d’obtenir des cookies valides et de contourner cette limite."
+                "Les plateformes bloquent souvent les IP de datacenters. S’authentifier avec un **compte Google** permet à Choomad Group d’obtenir des cookies valides et de contourner cette limite."
         },
         loginMethod: {
             title: "Recommandé : commande `!login`",

@@ -11,7 +11,7 @@ export const en = {
     },
 
     home: {
-        title: "Rawon",
+        title: "Choomad Group",
         description:
             "A simple powerful Discord music (multi-)bot built to fulfill your production desires. Easy to use, with no coding required.",
         invite: "Invite",
@@ -23,7 +23,7 @@ export const en = {
     gettingStarted: {
         title: "Getting Started",
         subtitle:
-            "Get Rawon up and running in minutes with our step-by-step guide.",
+            "Get Choomad Group up and running in minutes with our step-by-step guide.",
         features: {
             title: "✨ Features",
             items: [
@@ -98,7 +98,7 @@ export const en = {
 
     configuration: {
         title: "Configuration",
-        subtitle: "How Rawon’s configuration files and environment variables fit together.",
+        subtitle: "How Choomad Group’s configuration files and environment variables fit together.",
         overview: {
             title: "📄 Configuration files",
             intro: "Settings are split across a few files on purpose:",
@@ -232,10 +232,10 @@ export const en = {
         why: {
             title: "Why do I need this?",
             description:
-                "If you host Rawon on providers like OVHcloud, AWS, GCP, Azure, or other cloud/VPS hosts, you may see:",
+                "If you host Choomad Group on providers like OVHcloud, AWS, GCP, Azure, or other cloud/VPS hosts, you may see:",
             error: "Sign in to confirm you're not a bot",
             explanation:
-                "The platform often blocks requests from data-center IPs. Authenticating with a **Google account** lets Rawon obtain valid cookies and bypass that restriction."
+                "The platform often blocks requests from data-center IPs. Authenticating with a **Google account** lets Choomad Group obtain valid cookies and bypass that restriction."
         },
         loginMethod: {
             title: "Recommended: `!login` command",

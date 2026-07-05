@@ -13,7 +13,7 @@ export const tr: Translations = {
     },
 
     home: {
-        title: "Rawon",
+        title: "Choomad Group",
         description:
             "Üretim ortamınız için tasarlanmış, kullanımı kolay ve kod gerektirmeyen basit ve güçlü bir Discord müzik (çoklu) botu.",
         invite: "Davet et",
@@ -25,7 +25,7 @@ export const tr: Translations = {
     gettingStarted: {
         title: "Başlangıç",
         subtitle:
-            "Adım adım kılavuzla Rawon’u dakikalar içinde çalıştırın.",
+            "Adım adım kılavuzla Choomad Group’u dakikalar içinde çalıştırın.",
         features: {
             title: "✨ Özellikler",
             items: [
@@ -102,7 +102,7 @@ export const tr: Translations = {
     configuration: {
         title: "Yapılandırma",
         subtitle:
-            "Rawon yapılandırma dosyaları ile ortam değişkenlerinin nasıl bir araya geldiği.",
+            "Choomad Group yapılandırma dosyaları ile ortam değişkenlerinin nasıl bir araya geldiği.",
         overview: {
             title: "📄 Yapılandırma dosyaları",
             intro: "Ayarlar kasıtlı olarak birkaç dosyaya bölünmüştür:",
@@ -242,10 +242,10 @@ export const tr: Translations = {
         why: {
             title: "Buna neden ihtiyacım var?",
             description:
-                "Rawon’u OVHcloud, AWS, GCP, Azure veya diğer bulut/VPS sağlayıcılarında barındırıyorsanız şunu görebilirsiniz:",
+                "Choomad Group’u OVHcloud, AWS, GCP, Azure veya diğer bulut/VPS sağlayıcılarında barındırıyorsanız şunu görebilirsiniz:",
             error: "Sign in to confirm you're not a bot",
             explanation:
-                "Platform genelde veri merkezi IP’lerinden gelen istekleri engeller. **Google hesabı** ile kimlik doğrulaması, Rawon’un geçerli çerezler alıp bu kısıtlamayı aşmasını sağlar."
+                "Platform genelde veri merkezi IP’lerinden gelen istekleri engeller. **Google hesabı** ile kimlik doğrulaması, Choomad Group’un geçerli çerezler alıp bu kısıtlamayı aşmasını sağlar."
         },
         loginMethod: {
             title: "Önerilen: `!login` komutu",

@@ -13,7 +13,7 @@ export const vi: Translations = {
     },
 
     home: {
-        title: "Rawon",
+        title: "Choomad Group",
         description:
             "Bot nhạc Discord đơn giản nhưng mạnh mẽ (hỗ trợ nhiều instance), giúp bạn triển khai production dễ dàng — dùng được ngay, không cần viết code.",
         invite: "Mời",
@@ -25,7 +25,7 @@ export const vi: Translations = {
     gettingStarted: {
         title: "Bắt đầu",
         subtitle:
-            "Chạy Rawon chỉ trong vài phút với hướng dẫn từng bước.",
+            "Chạy Choomad Group chỉ trong vài phút với hướng dẫn từng bước.",
         features: {
             title: "✨ Tính năng",
             items: [
@@ -102,7 +102,7 @@ export const vi: Translations = {
     configuration: {
         title: "Cấu hình",
         subtitle:
-            "Cách các file cấu hình và biến môi trường của Rawon kết hợp với nhau.",
+            "Cách các file cấu hình và biến môi trường của Choomad Group kết hợp với nhau.",
         overview: {
             title: "📄 File cấu hình",
             intro: "Cài đặt được chia ra nhiều file có chủ đích:",
@@ -242,10 +242,10 @@ export const vi: Translations = {
         why: {
             title: "Tại sao cần?",
             description:
-                "Nếu bạn host Rawon trên OVHcloud, AWS, GCP, Azure hoặc VPS/cloud khác, bạn có thể thấy:",
+                "Nếu bạn host Choomad Group trên OVHcloud, AWS, GCP, Azure hoặc VPS/cloud khác, bạn có thể thấy:",
             error: "Sign in to confirm you're not a bot",
             explanation:
-                "Nền tảng thường chặn request từ IP trung tâm dữ liệu. Xác thực **tài khoản Google** giúp Rawon lấy cookie hợp lệ và vượt hạn chế đó."
+                "Nền tảng thường chặn request từ IP trung tâm dữ liệu. Xác thực **tài khoản Google** giúp Choomad Group lấy cookie hợp lệ và vượt hạn chế đó."
         },
         loginMethod: {
             title: "Khuyến nghị: lệnh `!login`",

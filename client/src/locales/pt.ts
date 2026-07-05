@@ -13,7 +13,7 @@ export const pt: Translations = {
     },
 
     home: {
-        title: "Rawon",
+        title: "Choomad Group",
         description:
             "Um bot de música (multi-) para Discord simples e poderoso, pensado para uso em produção. Fácil de usar, sem precisar programar.",
         invite: "Convidar",
@@ -25,7 +25,7 @@ export const pt: Translations = {
     gettingStarted: {
         title: "Primeiros passos",
         subtitle:
-            "Coloque o Rawon no ar em poucos minutos com nosso guia passo a passo.",
+            "Coloque o Choomad Group no ar em poucos minutos com nosso guia passo a passo.",
         features: {
             title: "✨ Recursos",
             items: [
@@ -101,7 +101,7 @@ export const pt: Translations = {
     configuration: {
         title: "Configuração",
         subtitle:
-            "Como os arquivos de configuração e as variáveis de ambiente do Rawon se encaixam.",
+            "Como os arquivos de configuração e as variáveis de ambiente do Choomad Group se encaixam.",
         overview: {
             title: "📄 Arquivos de configuração",
             intro: "As configurações são divididas em vários arquivos de propósito:",
@@ -242,10 +242,10 @@ export const pt: Translations = {
         why: {
             title: "Por que preciso disso?",
             description:
-                "Se você hospeda o Rawon em provedores como OVHcloud, AWS, GCP, Azure ou outros hosts na nuvem/VPS, pode ver:",
+                "Se você hospeda o Choomad Group em provedores como OVHcloud, AWS, GCP, Azure ou outros hosts na nuvem/VPS, pode ver:",
             error: "Faça login para confirmar que você não é um robô",
             explanation:
-                "A plataforma costuma bloquear requisições vindas de IPs de datacenter. Autenticar com uma **conta Google** permite ao Rawon obter cookies válidos e contornar essa restrição."
+                "A plataforma costuma bloquear requisições vindas de IPs de datacenter. Autenticar com uma **conta Google** permite ao Choomad Group obter cookies válidos e contornar essa restrição."
         },
         loginMethod: {
             title: "Recomendado: comando `!login`",

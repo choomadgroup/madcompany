@@ -13,7 +13,7 @@ export const zhCN: Translations = {
     },
 
     home: {
-        title: "Rawon",
+        title: "Choomad Group",
         description:
             "简洁而强大的 Discord 音乐（多实例）机器人，面向生产环境；开箱即用，无需编写代码。",
         invite: "邀请",
@@ -24,7 +24,7 @@ export const zhCN: Translations = {
 
     gettingStarted: {
         title: "入门",
-        subtitle: "按照分步指南，几分钟内即可运行 Rawon。",
+        subtitle: "按照分步指南，几分钟内即可运行 Choomad Group。",
         features: {
             title: "✨ 功能",
             items: [
@@ -99,7 +99,7 @@ export const zhCN: Translations = {
 
     configuration: {
         title: "配置",
-        subtitle: "Rawon 的配置文件与环境变量如何协同工作。",
+        subtitle: "Choomad Group 的配置文件与环境变量如何协同工作。",
         overview: {
             title: "📄 配置文件",
             intro: "设置有意拆分到多个文件中：",
@@ -237,10 +237,10 @@ export const zhCN: Translations = {
         why: {
             title: "为什么需要？",
             description:
-                "若在 OVHcloud、AWS、GCP、Azure 或其他云/VPS 上托管 Rawon，你可能会看到：",
+                "若在 OVHcloud、AWS、GCP、Azure 或其他云/VPS 上托管 Choomad Group，你可能会看到：",
             error: "Sign in to confirm you're not a bot",
             explanation:
-                "平台常会拦截来自数据中心 IP 的请求。使用 **Google 账户** 登录后，Rawon 可获取有效 Cookie 并绕过限制。"
+                "平台常会拦截来自数据中心 IP 的请求。使用 **Google 账户** 登录后，Choomad Group 可获取有效 Cookie 并绕过限制。"
         },
         loginMethod: {
             title: "推荐：`!login` 命令",

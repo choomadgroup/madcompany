@@ -13,7 +13,7 @@ export const ru: Translations = {
     },
 
     home: {
-        title: "Rawon",
+        title: "Choomad Group",
         description:
             "Простой и мощный музыкальный (мульти-)бот для Discord, заточенный под продакшен. Удобен в использовании и не требует программирования.",
         invite: "Пригласить",
@@ -25,7 +25,7 @@ export const ru: Translations = {
     gettingStarted: {
         title: "Начало работы",
         subtitle:
-            "Запустите Rawon за несколько минут с помощью пошагового руководства.",
+            "Запустите Choomad Group за несколько минут с помощью пошагового руководства.",
         features: {
             title: "✨ Возможности",
             items: [
@@ -102,7 +102,7 @@ export const ru: Translations = {
     configuration: {
         title: "Настройка",
         subtitle:
-            "Как файлы конфигурации Rawon и переменные окружения работают вместе.",
+            "Как файлы конфигурации Choomad Group и переменные окружения работают вместе.",
         overview: {
             title: "📄 Файлы конфигурации",
             intro: "Параметры намеренно разнесены по нескольким файлам:",
@@ -242,10 +242,10 @@ export const ru: Translations = {
         why: {
             title: "Зачем это нужно?",
             description:
-                "Если Rawon размещён у OVHcloud, AWS, GCP, Azure или на другом облачном/VPS-хостинге, может появиться:",
+                "Если Choomad Group размещён у OVHcloud, AWS, GCP, Azure или на другом облачном/VPS-хостинге, может появиться:",
             error: "Sign in to confirm you're not a bot",
             explanation:
-                "Платформа часто блокирует запросы с IP дата-центров. Вход с **аккаунта Google** позволяет Rawon получить валидные cookie и обойти ограничение."
+                "Платформа часто блокирует запросы с IP дата-центров. Вход с **аккаунта Google** позволяет Choomad Group получить валидные cookie и обойти ограничение."
         },
         loginMethod: {
             title: "Рекомендуется: команда `!login`",

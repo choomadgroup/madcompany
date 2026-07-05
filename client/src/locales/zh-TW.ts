@@ -13,7 +13,7 @@ export const zhTW: Translations = {
     },
 
     home: {
-        title: "Rawon",
+        title: "Choomad Group",
         description:
             "簡潔而強大的 Discord 音樂（多執行個體）機器人，適合正式環境；開箱即用，無需撰寫程式。",
         invite: "邀請",
@@ -24,7 +24,7 @@ export const zhTW: Translations = {
 
     gettingStarted: {
         title: "入門",
-        subtitle: "依照步驟指南，幾分鐘內即可執行 Rawon。",
+        subtitle: "依照步驟指南，幾分鐘內即可執行 Choomad Group。",
         features: {
             title: "✨ 功能",
             items: [
@@ -99,7 +99,7 @@ export const zhTW: Translations = {
 
     configuration: {
         title: "設定",
-        subtitle: "Rawon 的設定檔與環境變數如何搭配運作。",
+        subtitle: "Choomad Group 的設定檔與環境變數如何搭配運作。",
         overview: {
             title: "📄 設定檔",
             intro: "設定刻意分拆在多個檔案中：",
@@ -237,10 +237,10 @@ export const zhTW: Translations = {
         why: {
             title: "為什麼需要？",
             description:
-                "若在 OVHcloud、AWS、GCP、Azure 或其他雲端／VPS 託管 Rawon，你可能會看到：",
+                "若在 OVHcloud、AWS、GCP、Azure 或其他雲端／VPS 託管 Choomad Group，你可能會看到：",
             error: "Sign in to confirm you're not a bot",
             explanation:
-                "平台常會阻擋來自資料中心 IP 的請求。透過 **Google 帳戶** 驗證後，Rawon 可取得有效 Cookie 並繞過限制。"
+                "平台常會阻擋來自資料中心 IP 的請求。透過 **Google 帳戶** 驗證後，Choomad Group 可取得有效 Cookie 並繞過限制。"
         },
         loginMethod: {
             title: "建議：`!login` 指令",
