@@ -68,12 +68,6 @@ export default defineConfig({
         "**/dist/**",
       ],
     },
-    proxy: {
-      "/api": {
-        target: "http://localhost:3001",
-        changeOrigin: true
-      }
-    }
   },
   preview: {
     port,
