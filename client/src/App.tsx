@@ -6,8 +6,8 @@ import { LocaleProvider } from "@/contexts/LocaleContext";
 import HomePage from "@/pages/public/Home";
 import AboutPage from "@/pages/public/About";
 import ContactPage from "@/pages/public/Contact";
-import BlogPage from "@/pages/public/Blog";
-import PortfolioPage from "@/pages/public/Portfolio";
+import BlogPage from "@/pages/explore/Blog";
+import PortfolioPage from "@/pages/explore/Portfolio";
 import NotFound from "@/pages/public/Not-Found";
 import "@/styles/index.scss";
 
