@@ -1,10 +1,14 @@
-import {
-    getTranslations,
-    Locale,
-    localeNames,
-    Translations
-} from "@/locales";
+import i18n from "@/i18n";
+import { type Translations } from "@/locales/en";
+import { en } from "@/locales/en";
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+
+export type Locale = "id" | "en";
+
+export const localeNames: Record<Locale, string> = {
+    id: "Bahasa Indonesia",
+    en: "English"
+};
 
 interface LocaleContextType {
     locale: Locale;
@@ -15,50 +19,31 @@ interface LocaleContextType {
 
 const LocaleContext = createContext<LocaleContextType | undefined>(undefined);
 
-const STORAGE_KEY = "rawon-locale";
-const availableLocales = Object.keys(localeNames) as Locale[];
+const STORAGE_KEY = "choomad-locale";
 
 function isValidLocale(value: string): value is Locale {
-    return availableLocales.includes(value as Locale);
-}
-
-function detectBrowserLocale(): Locale {
-    const browserLang = navigator.language.toLowerCase();
-
-    if (browserLang.startsWith("id")) return "id";
-    if (browserLang.startsWith("es")) return "es";
-    if (browserLang.startsWith("fr")) return "fr";
-    if (browserLang.startsWith("ja")) return "ja";
-    if (browserLang.startsWith("pt")) return "pt";
-    if (browserLang.startsWith("ru")) return "ru";
-    if (browserLang.startsWith("tr")) return "tr";
-    if (browserLang.startsWith("uk")) return "uk";
-    if (browserLang.startsWith("vi")) return "vi";
-
-    if (browserLang === "zh-tw" || browserLang === "zh-hant") return "zh-TW";
-    if (browserLang.startsWith("zh")) return "zh-CN";
-
-    return "en";
+    return value === "id" || value === "en";
 }
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
-    const [locale, setLocaleState] = useState<Locale>("en");
+    const [locale, setLocaleState] = useState<Locale>(
+        isValidLocale(i18n.language) ? i18n.language : "id"
+    );
 
     useEffect(() => {
-        const stored = localStorage.getItem(STORAGE_KEY);
-        if (stored && isValidLocale(stored)) {
-            setLocaleState(stored);
-        } else {
-            setLocaleState(detectBrowserLocale());
-        }
+        const handler = (lng: string) => {
+            if (isValidLocale(lng)) setLocaleState(lng);
+        };
+        i18n.on("languageChanged", handler);
+        return () => i18n.off("languageChanged", handler);
     }, []);
 
     const setLocale = (newLocale: Locale) => {
-        setLocaleState(newLocale);
+        i18n.changeLanguage(newLocale);
         localStorage.setItem(STORAGE_KEY, newLocale);
     };
 
-    const t = getTranslations(locale);
+    const t = (i18n.getResourceBundle(locale, "translation") ?? en) as Translations;
 
     return (
         <LocaleContext.Provider value={{ locale, setLocale, t, localeNames }}>
