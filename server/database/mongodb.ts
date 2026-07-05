@@ -10,7 +10,6 @@ export async function connectMongoDB(): Promise<void> {
 
     await mongoose.connect(uri);
     isConnected = true;
-    console.log("✅ MongoDB connected");
 
     mongoose.connection.on("error", () => { isConnected = false; });
     mongoose.connection.on("disconnected", () => { isConnected = false; });
