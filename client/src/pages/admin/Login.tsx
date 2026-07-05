@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useAdmin } from "@/contexts/AdminContext";
+import { useLocation } from "wouter";
 import { Container, Typography, Button, CircularProgress } from "@mui/material";
 import { motion } from "framer-motion";
 
 export default function AdminLogin() {
     const { login } = useAdmin();
+    const [, setLocation] = useLocation();
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
@@ -22,6 +24,7 @@ export default function AdminLogin() {
             const data = await res.json();
             if (!res.ok) throw new Error(data.error ?? "Login gagal");
             login(data.token);
+            setLocation("/admin");
         } catch (err: any) {
             setError(err.message);
         } finally {
