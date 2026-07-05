@@ -18,7 +18,7 @@ export default function HomePage() {
                         <div className="relative aspect-square h-auto w-40 sm:w-56">
                             <img
                                 src="/icons/icon-512x512.png"
-                                alt="rawon.jpg"
+                                alt="Choomad Group"
                                 className="absolute inset-0 h-full w-full object-contain"
                             />
                         </div>

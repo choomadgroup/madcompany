@@ -15,7 +15,7 @@ export const id: Translations = {
     home: {
         title: "Choomad Group",
         description:
-            "Bot musik Discord (multi-) yang simpel tapi powerful, dibuat untuk kebutuhan produksi. Mudah dipakai, tanpa perlu coding.",
+            "Choomad Group adalah perusahaan teknologi yang membangun alat dan bot Discord yang powerful untuk komunitas di seluruh dunia.",
         invite: "Undang",
         inviteBot: "Undang Bot",
         support: "Dukungan",
@@ -284,7 +284,7 @@ export const id: Translations = {
         docker: {
             title: "Docker",
             persistence:
-                "Cookie dan data profil bertahan di volume bernama **`rawon:/app/cache`** melewati restart container.",
+                "Cookie dan data profil bertahan di volume bernama **`choomadgroup:/app/cache`** melewati restart container.",
             chromium: "Image sudah berisi Chromium, jadi **`!login start`** jalan tanpa setup tambahan di sisi image."
         },
         envVars: {

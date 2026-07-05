@@ -114,12 +114,12 @@ export const NavigationBar = () => {
                         <div className="relative aspect-square h-auto w-12">
                             <img
                                 src="/icons/icon-512x512.png"
-                                alt="rawon.jpg"
+                                alt="Choomad Group"
                                 className="absolute inset-0 h-full w-full object-contain"
                             />
                         </div>
                         <Typography className="text-center font-sans text-xl font-medium capitalize text-third">
-                            rawon
+                            Choomad Group
                         </Typography>
                     </div>
                 </Link>
@@ -274,12 +274,12 @@ export const NavigationBar = () => {
                             <div className="relative aspect-square h-auto w-12">
                                 <img
                                     src="/icons/icon-512x512.png"
-                                    alt="rawon.jpg"
+                                    alt="Choomad Group"
                                     className="absolute inset-0 h-full w-full object-contain"
                                 />
                             </div>
                             <Typography className="mt-2 text-center font-sans text-xl font-medium capitalize text-third">
-                                rawon
+                                Choomad Group
                             </Typography>
                         </div>
                     </Link>

@@ -13,7 +13,7 @@ export const en = {
     home: {
         title: "Choomad Group",
         description:
-            "A simple powerful Discord music (multi-)bot built to fulfill your production desires. Easy to use, with no coding required.",
+            "Choomad Group is a technology company dedicated to building powerful tools and bots for Discord communities worldwide.",
         invite: "Invite",
         inviteBot: "Invite Bot",
         support: "Support",
@@ -281,7 +281,7 @@ export const en = {
         docker: {
             title: "Docker",
             persistence:
-                "Cookie and profile data persist in the **`rawon:/app/cache`** named volume across container restarts.",
+                "Cookie and profile data persist in the **`choomadgroup:/app/cache`** named volume across container restarts.",
             chromium: "The image ships with Chromium, so **`!login start`** works without extra setup on the image side."
         },
         envVars: {
