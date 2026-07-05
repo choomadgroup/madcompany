@@ -3,9 +3,9 @@ import type { Translations } from "./en";
 export const id: Translations = {
     nav: {
         home: "Beranda",
-        docs: "Dokumentasi",
-        gettingStarted: "Memulai",
-        configuration: "Konfigurasi",
+        docs: "Jelajahi",
+        gettingStarted: "Blog",
+        configuration: "Portofolio",
         cookiesSetup: "Setup Cookies",
         disclaimers: "Disclaimer",
         permissionCalculator: "Tentang",

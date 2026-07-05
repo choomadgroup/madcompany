@@ -6,8 +6,8 @@ import { LocaleProvider } from "@/contexts/LocaleContext";
 import HomePage from "@/pages/public/Home";
 import AboutPage from "@/pages/public/About";
 import ContactPage from "@/pages/public/Contact";
-import GettingStartedPage from "@/pages/docs/Getting-Started";
-import ConfigurationPage from "@/pages/docs/Configuration";
+import BlogPage from "@/pages/public/Blog";
+import PortfolioPage from "@/pages/public/Portfolio";
 import NotFound from "@/pages/public/Not-Found";
 import "@/styles/index.scss";
 
@@ -25,11 +25,8 @@ function Router() {
             <Route path="/" component={HomePage} />
             <Route path="/about" component={AboutPage} />
             <Route path="/contact" component={ContactPage} />
-            <Route
-                path="/docs/getting-started"
-                component={GettingStartedPage}
-            />
-            <Route path="/docs/configuration" component={ConfigurationPage} />
+            <Route path="/blog" component={BlogPage} />
+            <Route path="/portfolio" component={PortfolioPage} />
             <Route component={NotFound} />
         </Switch>
     );

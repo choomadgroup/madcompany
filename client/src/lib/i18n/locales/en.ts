@@ -1,9 +1,9 @@
 export const en = {
     nav: {
         home: "Home",
-        docs: "Docs",
-        gettingStarted: "Getting Started",
-        configuration: "Configuration",
+        docs: "Explore",
+        gettingStarted: "Blog",
+        configuration: "Portfolio",
         cookiesSetup: "Cookies Setup",
         disclaimers: "Disclaimers",
         permissionCalculator: "About",

@@ -32,8 +32,8 @@ export const NavigationBar = () => {
     ];
 
     const DocsItems = [
-        { name: t.nav.gettingStarted, path: "/docs/getting-started" },
-        { name: t.nav.configuration, path: "/docs/configuration" }
+        { name: t.nav.gettingStarted, path: "/blog" },
+        { name: t.nav.configuration, path: "/portfolio" }
     ];
 
     const docsOpen = Boolean(docsAnchorEl);
