@@ -1,4 +1,4 @@
-import "@/i18n"; // initialize i18next before anything else
+import "@/lib/i18n"; // initialize i18next before anything else
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import { NavigationBar } from "@/components/public/NavigationBar";

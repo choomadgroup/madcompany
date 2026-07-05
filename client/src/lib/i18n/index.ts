@@ -1,7 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import { en } from "@/locales/en";
-import { id } from "@/locales/id";
+import { en } from "@/lib/i18n/locales/en";
+import { id } from "@/lib/i18n/locales/id";
 
 const STORAGE_KEY = "choomad-locale";
 

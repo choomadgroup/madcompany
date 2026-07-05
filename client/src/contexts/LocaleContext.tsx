@@ -1,6 +1,6 @@
-import i18n from "@/i18n";
-import { type Translations } from "@/locales/en";
-import { en } from "@/locales/en";
+import i18n from "@/lib/i18n";
+import { type Translations } from "@/lib/i18n/locales/en";
+import { en } from "@/lib/i18n/locales/en";
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 
 export type Locale = "id" | "en";

@@ -1,5 +1,5 @@
 import { useLocale } from "@/contexts/LocaleContext";
-import { Locale } from "@/locales";
+import { Locale } from "@/lib/i18n/locales";
 import {
     ExpandLessRounded,
     ExpandMoreRounded,
