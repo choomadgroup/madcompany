@@ -18,66 +18,27 @@ import {
 import { Link, useLocation } from "wouter";
 import { useState } from "react";
 
-const ExternalLinks = [
-    {
-        name: "Discord",
-        path: "https://stegripe.org/discord"
-    },
-    {
-        name: "GitHub",
-        path: "https://github.com/stegripe/rawon"
-    },
-    {
-        name: "Stegripe",
-        path: "https://stegripe.org"
-    }
-];
-
 export const NavigationBar = () => {
     const [pathname, navigate] = useLocation();
     const { t, locale, setLocale, localeNames } = useLocale();
     const [isDrawerOpen, setDrawerOpen] = useState(false);
-    const [isLinksOpen, setLinksOpen] = useState(false);
     const [isDocsOpen, setDocsOpen] = useState(false);
-    const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
-    const [docsAnchorEl, setDocsAnchorEl] = useState<HTMLButtonElement | null>(
-        null
-    );
+    const [docsAnchorEl, setDocsAnchorEl] = useState<HTMLButtonElement | null>(null);
 
     const NavigationItems = [
-        {
-            name: t.nav.home,
-            path: "/"
-        },
-        {
-            name: t.nav.permissionCalculator,
-            path: "/permission-calculator"
-        }
+        { name: t.nav.home, path: "/" },
+        { name: t.nav.permissionCalculator, path: "/permission-calculator" },
+        { name: t.nav.links, path: "/contact" }
     ];
 
     const DocsItems = [
-        {
-            name: t.nav.gettingStarted,
-            path: "/docs/getting-started"
-        },
-        {
-            name: t.nav.configuration,
-            path: "/docs/configuration"
-        }
+        { name: t.nav.gettingStarted, path: "/docs/getting-started" },
+        { name: t.nav.configuration, path: "/docs/configuration" }
     ];
 
-    const open = Boolean(anchorEl);
     const docsOpen = Boolean(docsAnchorEl);
 
     const toggleLocale = () => setLocale(locale === "id" ? "en" : "id");
-
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
 
     const handleDocsClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setDocsAnchorEl(event.currentTarget);
@@ -87,17 +48,8 @@ export const NavigationBar = () => {
         setDocsAnchorEl(null);
     };
 
-    const ToggleDrawer = () => {
-        setDrawerOpen(open => !open);
-    };
-
-    const ToggleLinks = () => {
-        setLinksOpen(open => !open);
-    };
-
-    const ToggleDocs = () => {
-        setDocsOpen(open => !open);
-    };
+    const ToggleDrawer = () => setDrawerOpen(open => !open);
+    const ToggleDocs = () => setDocsOpen(open => !open);
 
     return (
         <>
@@ -162,77 +114,18 @@ export const NavigationBar = () => {
                             open={docsOpen}
                             anchorEl={docsAnchorEl}
                             onClose={handleDocsClose}
-                            anchorOrigin={{
-                                vertical: "bottom",
-                                horizontal: "center"
-                            }}
-                            transformOrigin={{
-                                vertical: "top",
-                                horizontal: "center"
-                            }}
-                            sx={{
-                                "& .MuiPopover-paper": {
-                                    backgroundColor: "#FFF3D1"
-                                }
-                            }}
+                            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+                            transformOrigin={{ vertical: "top", horizontal: "center" }}
+                            sx={{ "& .MuiPopover-paper": { backgroundColor: "#FFF3D1" } }}
                         >
                             <div className="flex flex-col p-2">
                                 {DocsItems.map((item, index) => (
                                     <Button
                                         key={index}
                                         id={item.name}
-                                        onClick={() => {
-                                            navigate(item.path);
-                                            handleDocsClose();
-                                        }}
+                                        onClick={() => { navigate(item.path); handleDocsClose(); }}
                                         color="inherit"
-                                        className={`w-full justify-start p-0 px-4 py-1 font-sans capitalize text-third`}
-                                    >
-                                        {item.name}
-                                    </Button>
-                                ))}
-                            </div>
-                        </Popover>
-                    </div>
-                    <div className="flex flex-col gap-1">
-                        <Button
-                            id="links"
-                            onClick={handleClick}
-                            color="inherit"
-                            className="justify-start p-0 px-4 py-1 font-sans text-lg capitalize text-third"
-                        >
-                            {t.nav.links}
-                        </Button>
-                        <Popover
-                            id="linksPopover"
-                            open={open}
-                            anchorEl={anchorEl}
-                            onClose={handleClose}
-                            anchorOrigin={{
-                                vertical: "bottom",
-                                horizontal: "center"
-                            }}
-                            transformOrigin={{
-                                vertical: "top",
-                                horizontal: "center"
-                            }}
-                            sx={{
-                                "& .MuiPopover-paper": {
-                                    backgroundColor: "#FFF3D1"
-                                }
-                            }}
-                        >
-                            <div className="flex flex-col p-2">
-                                {ExternalLinks.map((item, index) => (
-                                    <Button
-                                        key={index}
-                                        id={item.name}
-                                        onClick={() => {
-                                            window.open(item.path, "_blank", "noopener,noreferrer");
-                                            handleClose();
-                                        }}
-                                        color="inherit"
-                                        className={`w-full justify-start p-0 px-4 py-1 font-sans capitalize text-third`}
+                                        className="w-full justify-start p-0 px-4 py-1 font-sans capitalize text-third"
                                     >
                                         {item.name}
                                     </Button>
@@ -251,25 +144,16 @@ export const NavigationBar = () => {
                     </IconButton>
                 </div>
             </Container>
+
             <Drawer
                 id="__next"
                 anchor="left"
                 open={isDrawerOpen}
                 onClose={ToggleDrawer}
-                PaperProps={{
-                    sx: {
-                        backgroundColor: "#FFF3D1"
-                    }
-                }}
+                PaperProps={{ sx: { backgroundColor: "#FFF3D1" } }}
             >
-                <Container
-                    fixed
-                    className="flex h-full w-full flex-col items-center p-0 text-third"
-                >
-                    <Link
-                        href="/"
-                        className="flex w-full p-3 text-inherit no-underline"
-                    >
+                <Container fixed className="flex h-full w-full flex-col items-center p-0 text-third">
+                    <Link href="/" className="flex w-full p-3 text-inherit no-underline">
                         <div className="flex items-center gap-1">
                             <div className="relative aspect-square h-auto w-12">
                                 <img
@@ -308,11 +192,9 @@ export const NavigationBar = () => {
                             id="docsToggleButton"
                             color="inherit"
                             endIcon={
-                                isDocsOpen ? (
-                                    <ExpandLessRounded className="text-xl text-third" />
-                                ) : (
-                                    <ExpandMoreRounded className="text-xl text-third" />
-                                )
+                                isDocsOpen
+                                    ? <ExpandLessRounded className="text-xl text-third" />
+                                    : <ExpandMoreRounded className="text-xl text-third" />
                             }
                             onClick={ToggleDocs}
                             className="w-full justify-between px-8 font-sans text-lg font-medium capitalize"
@@ -341,53 +223,12 @@ export const NavigationBar = () => {
                         </Collapse>
                     </div>
                     <Divider className="m-4 w-full" />
-                    <div className="flex w-full flex-col gap-1">
-                        <Button
-                            id="linksToggleButton"
-                            color="inherit"
-                            endIcon={
-                                isLinksOpen ? (
-                                    <ExpandLessRounded className="text-xl text-third" />
-                                ) : (
-                                    <ExpandMoreRounded className="text-xl text-third" />
-                                )
-                            }
-                            onClick={ToggleLinks}
-                            className="w-full justify-between px-8 font-sans text-lg font-medium capitalize"
-                        >
-                            {t.nav.links}
-                        </Button>
-                        <Collapse in={isLinksOpen}>
-                            <div className="flex w-full flex-col gap-1">
-                                {ExternalLinks.map((item, index) => (
-                                    <a
-                                        key={index}
-                                        href={item.path}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        <Button
-                                            id={item.name}
-                                            color="inherit"
-                                            className="w-full justify-start p-0 px-8 py-1 font-sans capitalize text-third"
-                                        >
-                                            {item.name}
-                                        </Button>
-                                    </a>
-                                ))}
-                            </div>
-                        </Collapse>
-                    </div>
-                    <Divider className="m-4 w-full" />
                     <div className="flex w-full flex-col gap-1 px-8">
                         <Button
                             id="drawer-language"
                             color="inherit"
                             startIcon={<LanguageRounded className="text-xl text-third" />}
-                            onClick={() => {
-                                toggleLocale();
-                                ToggleDrawer();
-                            }}
+                            onClick={() => { toggleLocale(); ToggleDrawer(); }}
                             className="w-full justify-start p-0 px-4 py-1 font-sans text-lg capitalize text-third"
                         >
                             {localeNames[locale]}

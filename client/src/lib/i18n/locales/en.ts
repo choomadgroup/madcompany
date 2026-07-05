@@ -6,14 +6,14 @@ export const en = {
         configuration: "Configuration",
         cookiesSetup: "Cookies Setup",
         disclaimers: "Disclaimers",
-        permissionCalculator: "Permission Calculator",
-        links: "Links"
+        permissionCalculator: "About",
+        links: "Contact"
     },
 
     home: {
         title: "Choomad Group",
         description:
-            "Choomad Group is a technology company dedicated to building powerful tools and bots for Discord communities worldwide.",
+            "Choomad Group is a creative company specializing in Brand, Fashion, Food, and Web Development — crafting meaningful experiences for communities worldwide.",
         invite: "Invite",
         inviteBot: "Invite Bot",
         support: "Support",

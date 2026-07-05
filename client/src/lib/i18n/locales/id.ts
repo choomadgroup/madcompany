@@ -8,14 +8,14 @@ export const id: Translations = {
         configuration: "Konfigurasi",
         cookiesSetup: "Setup Cookies",
         disclaimers: "Disclaimer",
-        permissionCalculator: "Kalkulator Izin",
-        links: "Tautan"
+        permissionCalculator: "Tentang",
+        links: "Kontak"
     },
 
     home: {
         title: "Choomad Group",
         description:
-            "Choomad Group adalah perusahaan teknologi yang membangun alat dan bot Discord yang powerful untuk komunitas di seluruh dunia.",
+            "Choomad Group adalah perusahaan kreatif yang bergerak di bidang Brand, Fashion, Food, dan Web Development — menciptakan pengalaman bermakna untuk komunitas di seluruh dunia.",
         invite: "Undang",
         inviteBot: "Undang Bot",
         support: "Dukungan",

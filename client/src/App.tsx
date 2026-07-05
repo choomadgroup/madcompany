@@ -4,7 +4,8 @@ import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import { NavigationBar } from "@/components/public/NavigationBar";
 import { LocaleProvider } from "@/contexts/LocaleContext";
 import HomePage from "@/pages/public/Home";
-import PermissionCalculatorPage from "@/pages/public/Permission-Calculator";
+import AboutPage from "@/pages/public/About";
+import ContactPage from "@/pages/public/Contact";
 import GettingStartedPage from "@/pages/docs/Getting-Started";
 import ConfigurationPage from "@/pages/docs/Configuration";
 import NotFound from "@/pages/public/Not-Found";
@@ -22,10 +23,8 @@ function Router() {
     return (
         <Switch>
             <Route path="/" component={HomePage} />
-            <Route
-                path="/permission-calculator"
-                component={PermissionCalculatorPage}
-            />
+            <Route path="/permission-calculator" component={AboutPage} />
+            <Route path="/contact" component={ContactPage} />
             <Route
                 path="/docs/getting-started"
                 component={GettingStartedPage}
