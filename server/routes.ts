@@ -1,4 +1,6 @@
 import { Router } from "express";
+import fs from "fs";
+import path from "path";
 import { mongoose } from "./database/mongodb.js";
 import { Blog } from "./models/Blog.js";
 import { Portfolio } from "./models/Portfolio.js";
@@ -18,6 +20,21 @@ router.get("/health", (_req, res) => {
         status: "ok",
         database: DB_STATE[mongoose.connection.readyState] ?? "unknown"
     });
+});
+
+// ─── Admin: Upload Gambar ──────────────────────────────────────
+router.post("/admin/upload", adminAuth, (req, res) => {
+    const { imageBase64 } = req.body;
+    if (!imageBase64) { res.status(400).json({ error: "Tidak ada gambar" }); return; }
+    const matches = imageBase64.match(/^data:image\/(\w+);base64,(.+)$/s);
+    if (!matches) { res.status(400).json({ error: "Format gambar tidak valid" }); return; }
+    const ext = matches[1] === "jpeg" ? "jpg" : matches[1];
+    const data = matches[2];
+    const uniqueName = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+    const uploadsDir = path.resolve("public/uploads");
+    fs.mkdirSync(uploadsDir, { recursive: true });
+    fs.writeFileSync(path.join(uploadsDir, uniqueName), data, "base64");
+    res.json({ url: `/uploads/${uniqueName}` });
 });
 
 // ─── Admin Auth ────────────────────────────────────────────────

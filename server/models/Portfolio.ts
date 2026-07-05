@@ -6,6 +6,7 @@ const PortfolioSchema = new mongoose.Schema(
         category: { type: String, required: true },
         description: { type: String, required: true },
         tags: { type: [String], default: [] },
+        imageUrl: { type: String, default: "" },
         published: { type: Boolean, default: false }
     },
     { timestamps: true }

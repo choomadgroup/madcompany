@@ -22,7 +22,8 @@ const PORT = Number(process.env.PORT ?? 5000);
 const isDev = process.env.NODE_ENV !== "production";
 
 app.use(cors({ origin: true }));
-app.use(express.json());
+app.use(express.json({ limit: "10mb" }));
+app.use("/uploads", express.static("public/uploads"));
 app.use("/api", router);
 
 async function start() {

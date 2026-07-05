@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 const categories = ["Semua", "Brand", "Fashion", "Food", "Web"];
 
-type Portfolio = { _id: string; title: string; category: string; description: string; tags: string[]; createdAt: string };
+type Portfolio = { _id: string; title: string; category: string; description: string; tags: string[]; imageUrl: string; createdAt: string };
 
 const categoryColors: Record<string, string> = {
     Brand: "bg-purple-100 text-purple-700",
@@ -96,9 +96,17 @@ export default function PortfolioPage() {
                                 transition={{ duration: 0.4, delay: i * 0.07 }}
                                 className="flex flex-col overflow-hidden rounded-2xl border border-third/15 bg-white/50 shadow-sm transition-shadow hover:shadow-md"
                             >
-                                <div className={`flex h-36 items-center justify-center bg-gradient-to-br ${categoryBg[project.category] ?? "from-gray-100 to-gray-50"}`}>
-                                    <span className="text-5xl">{categoryEmoji[project.category] ?? "✨"}</span>
-                                </div>
+                                {project.imageUrl ? (
+                                    <img
+                                        src={project.imageUrl}
+                                        alt={project.title}
+                                        className="h-48 w-full object-cover"
+                                    />
+                                ) : (
+                                    <div className={`flex h-48 items-center justify-center bg-gradient-to-br ${categoryBg[project.category] ?? "from-gray-100 to-gray-50"}`}>
+                                        <span className="text-5xl">{categoryEmoji[project.category] ?? "✨"}</span>
+                                    </div>
+                                )}
                                 <div className="flex flex-col gap-2 p-5">
                                     <span className={`w-fit rounded-full px-3 py-0.5 text-xs font-semibold ${categoryColors[project.category] ?? "bg-gray-100 text-gray-600"}`}>
                                         {project.category}

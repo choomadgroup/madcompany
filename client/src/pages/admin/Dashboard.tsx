@@ -8,10 +8,10 @@ const BLOG_CATEGORIES = ["Brand", "Fashion", "Food", "Web Dev"];
 const PORTFOLIO_CATEGORIES = ["Brand", "Fashion", "Food", "Web"];
 
 type BlogItem = { _id: string; title: string; category: string; description: string; content: string; readTime: string; published: boolean; createdAt: string };
-type PortfolioItem = { _id: string; title: string; category: string; description: string; tags: string[]; published: boolean; createdAt: string };
+type PortfolioItem = { _id: string; title: string; category: string; description: string; tags: string[]; imageUrl: string; published: boolean; createdAt: string };
 
 const emptyBlog = { title: "", category: "Brand", description: "", content: "", readTime: "5 menit", published: false };
-const emptyPortfolio = { title: "", category: "Brand", description: "", tags: "", published: false };
+const emptyPortfolio = { title: "", category: "Brand", description: "", tags: "", imageUrl: "", published: false };
 
 const categoryColors: Record<string, string> = {
     Brand: "bg-purple-100 text-purple-700",
@@ -77,10 +77,32 @@ export default function AdminDashboard() {
 
     const openAddPortfolio = () => { setPortfolioForm(emptyPortfolio); setEditingPortfolio(null); setPortfolioModal(true); };
     const openEditPortfolio = (p: PortfolioItem) => {
-        setPortfolioForm({ title: p.title, category: p.category, description: p.description, tags: p.tags.join(", "), published: p.published });
+        setPortfolioForm({ title: p.title, category: p.category, description: p.description, tags: p.tags.join(", "), imageUrl: p.imageUrl ?? "", published: p.published });
         setEditingPortfolio(p);
         setPortfolioModal(true);
     };
+
+    const handleImageUpload = async (file: File) => {
+        return new Promise<string>((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = async () => {
+                try {
+                    const res = await fetch("/api/admin/upload", {
+                        method: "POST",
+                        headers: authHeader(),
+                        body: JSON.stringify({ imageBase64: reader.result })
+                    });
+                    const data = await res.json();
+                    if (!res.ok) throw new Error(data.error);
+                    resolve(data.url);
+                } catch (e) { reject(e); }
+            };
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+        });
+    };
+
+    const [uploadingImage, setUploadingImage] = useState(false);
 
     const saveBlog = async () => {
         setSaving(true);
@@ -98,7 +120,7 @@ export default function AdminDashboard() {
             const tags = portfolioForm.tags.split(",").map(t => t.trim()).filter(Boolean);
             const url = editingPortfolio ? `/api/admin/portfolios/${editingPortfolio._id}` : "/api/admin/portfolios";
             const method = editingPortfolio ? "PUT" : "POST";
-            const res = await fetch(url, { method, headers: authHeader(), body: JSON.stringify({ ...portfolioForm, tags }) });
+            const res = await fetch(url, { method, headers: authHeader(), body: JSON.stringify({ ...portfolioForm, tags, imageUrl: portfolioForm.imageUrl }) });
             if (res.ok) { setPortfolioModal(false); fetchPortfolios(); }
         } finally { setSaving(false); }
     };
@@ -411,6 +433,40 @@ export default function AdminDashboard() {
                                 placeholder="Logo, Brand Guide, UI/UX (pisahkan dengan koma)"
                                 className="rounded-lg border border-gray-200 px-3 py-2 font-sans text-sm outline-none focus:border-gray-400"
                             />
+                        </div>
+                        <div className="flex flex-col gap-1">
+                            <label className="font-sans text-sm font-medium text-gray-700">Gambar Proyek</label>
+                            {portfolioForm.imageUrl && (
+                                <div className="relative mb-2 overflow-hidden rounded-lg">
+                                    <img src={portfolioForm.imageUrl} alt="preview" className="h-40 w-full object-cover" />
+                                    <button
+                                        onClick={() => setPortfolioForm(f => ({ ...f, imageUrl: "" }))}
+                                        className="absolute right-2 top-2 rounded-full bg-red-500 px-2 py-0.5 font-sans text-xs text-white hover:bg-red-600"
+                                    >
+                                        Hapus
+                                    </button>
+                                </div>
+                            )}
+                            <label className={`flex cursor-pointer items-center justify-center gap-2 rounded-lg border-2 border-dashed border-gray-200 px-4 py-3 font-sans text-sm transition-colors hover:border-gray-400 hover:bg-gray-50 ${uploadingImage ? "opacity-50 pointer-events-none" : ""}`}>
+                                <span>{uploadingImage ? "Mengupload..." : "📁 Pilih Gambar (JPG, PNG, WebP)"}</span>
+                                <input
+                                    type="file"
+                                    accept="image/jpeg,image/png,image/webp"
+                                    className="hidden"
+                                    onChange={async e => {
+                                        const file = e.target.files?.[0];
+                                        if (!file) return;
+                                        if (file.size > 8 * 1024 * 1024) { alert("Ukuran file maksimal 8MB"); return; }
+                                        setUploadingImage(true);
+                                        try {
+                                            const url = await handleImageUpload(file);
+                                            setPortfolioForm(f => ({ ...f, imageUrl: url }));
+                                        } catch { alert("Gagal upload gambar"); }
+                                        finally { setUploadingImage(false); }
+                                    }}
+                                />
+                            </label>
+                            <span className="font-sans text-xs text-gray-400">Maksimal 8MB. Gambar akan tampil di halaman Portofolio.</span>
                         </div>
                         <FormControlLabel
                             control={
