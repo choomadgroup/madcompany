@@ -1,62 +1,46 @@
-# Rawon — Marketing Site
+# Rawon Marketing Site
 
-Marketing/landing site for **Rawon**, a Discord music (multi-)bot. Lets visitors learn about the bot, invite it to their server, calculate permissions, and read setup docs.
+A marketing/landing site for the Rawon Discord music multi-bot. Includes a home page, a Discord permission calculator, and documentation pages (Getting Started, Configuration). Supports multiple languages via a custom `LocaleContext`.
 
-## Run & Operate
+## Tech Stack
 
-- `pnpm run dev` — start the dev server (port 5000)
-- `pnpm run build` — production build (output in `dist/public`)
-- `pnpm run serve` — preview the production build
-- `pnpm run typecheck` — typecheck the project
+- **React 19** + **Vite 7** + **TypeScript 5.9**
+- **Material UI (MUI 5)** for core layout components
+- **Tailwind CSS v3** + **shadcn/ui (Radix UI)** for docs/UI components
+- **wouter** for client-side routing
+- **@tanstack/react-query** for data fetching
+- **framer-motion** for animations
+- **pnpm** for package management
 
-## Stack
+## Project Structure
 
-- Vite 7 + React 19 + TypeScript 5.9
-- MUI (Material UI) for core layout/components, Tailwind CSS + shadcn/radix UI primitives for docs/utility pages
-- `wouter` for client-side routing
-- `framer-motion` for animations
-- Multi-language support via a custom locale system (`client/src/locales`, 13 languages)
+```
+client/src/
+  pages/
+    public/     # Home page, 404, etc.
+    docs/       # Getting Started, Configuration docs
+  components/
+    public/     # Public-facing components
+    ui/         # shadcn/ui components
+  locales/      # Translation files (multi-language support)
+public/         # Static assets (icons, manifest)
+```
 
-## Where things live
+## How to Run
 
-- `index.html` — app entry HTML (project root)
-- `client/src/main.tsx` — app entry point
-- `client/src/App.tsx` — routes
-- `client/src/pages/public/` — public-facing pages (Home, Permission Calculator, 404)
-- `client/src/pages/docs/` — documentation pages (Getting Started, Configuration)
-- `client/src/components/public/` — shared public components (NavigationBar, InlineCode)
-- `client/src/components/ui/` — shadcn/radix UI primitives
-- `client/src/locales/` — translation strings per language
-- `client/src/contexts/LocaleContext.tsx` — active locale provider/hook
-- `public/` — static assets (icons, manifest, favicon)
-- `vite.config.ts` — Vite config (root = project root, alias `@` → `client/src`)
+```bash
+pnpm install   # install dependencies
+pnpm run dev   # start dev server on $PORT (default 5000)
+```
 
-## Architecture decisions
+The dev server binds to `0.0.0.0` and is accessible via the Replit preview pane.
 
-- This is a single-artifact static site (no backend/API/DB) — plain Vite + React, no server framework.
-- `index.html` and static assets (`public/`, `components.json`) live at the project root even though source code lives under `client/src/` — this was a manual restructure by the user away from the original artifact-based layout.
-- Vite's `root` is set to the project root (not `client/`) to match where `index.html` lives; the `@` alias still points into `client/src` for imports.
+## Build
 
-## Product
+```bash
+pnpm run build   # outputs to dist/public/
+```
 
-- Landing page introducing Rawon (Discord music bot)
-- Permission calculator page for generating bot invite permissions
-- Docs pages: Getting Started, Configuration
-- Multi-language UI (13 locales)
+## User Preferences
 
-## User preferences
-
-- Only ever run **one** workflow/console/port (5000). Do not create extra workflows or artifacts.
-- Don't over-explain or proactively investigate — just fix what's broken and confirm briefly.
-- User (Madrols) communicates in Indonesian, casual/direct tone; keep responses short.
-- User frequently moves/renames/deletes files manually between sessions — always check `git status` for uncommitted moves before assuming the tree matches what was last built.
-
-## Gotchas
-
-- Vite's dev server watches the whole project root — `node_modules`, `.git`, `.local`, `.cache`, and `dist` are excluded via `server.watch.ignored` in `vite.config.ts` to avoid hitting the OS file-watcher limit (ENOSPC).
-- Occasional stale "Invalid hook call" console errors appear transiently during Vite dependency re-optimization/HMR reloads right after a restart — these clear on their own once the page settles; only investigate further if they persist after a fresh reload with `node_modules/.vite` cleared.
-- After the user manually moves/renames pages or components, re-check `App.tsx` imports/routes, `NavigationBar.tsx` links, and any in-page `<Link>`s referencing the old paths.
-
-## Pointers
-
-- See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details
+<!-- Add user preferences here -->
